@@ -1,0 +1,9 @@
+requests
+flask
+flask-bootstrap
+ipython
+python-dotenv
+unidecode
+pillow
+opencv-python
+mattermostdriver
