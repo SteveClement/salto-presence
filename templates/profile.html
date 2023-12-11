@@ -1,0 +1,51 @@
+{% extends "bootstrap/base.html" %}
+
+{% block html_attribs %} lang="en"{% endblock %}
+
+{% block head %}
+{{super()}}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta http-equiv="refresh" content="60; URL={{ url_for('main', _external=True) }}user/{{ name }}/{{ mode }}">
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='style_profile.css')}}">
+{% endblock %}
+
+{% block title %}Profile page for {{ name }}{% endblock %}
+
+{% block content %}
+  <!-- Quote of the year:  I did not chose the thug life, the thug life chose me. -->
+
+  <div>
+    {{ name }}
+    <br />
+    Phone extension: {{ extension }}
+    <br />
+    Team: {{ team }}
+    <br />
+    Shortname: {{ shortName }}
+    <br />
+    MatterMost status: {{ mmStatus }}
+    <br />
+
+    {% if 'thug' in mode %}
+      <br />
+      Bruh, you a thug too, #respect
+      <br />
+      <img src="{{ url_for('static', filename=pic) }}" />
+    {% endif %}
+
+  {% if 'debug' in mode %}
+    <br />
+    #faces
+    <br />
+    <img src="{{ url_for('static', filename=picDebug) }}" />
+  {% endif %}
+
+ </div>
+  <p>
+    <input type="button" value="Reload profile" onclick="window.location.reload();" />
+  </p>
+{% endblock %}

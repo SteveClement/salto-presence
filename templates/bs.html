@@ -1,0 +1,33 @@
+{% extends "bootstrap/base.html" %}
+
+{% block html_attribs %} lang="en"{% endblock %}
+
+{% block head %}
+{{super()}}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta http-equiv="refresh" content="60; URL={{ url_for('main', _external=True) }}">
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+{% endblock %}
+
+{% block title %}Who is inside the %CompanyName% building.{% endblock %}
+
+{% block content %}
+  <!-- Quote of the year:  I did not chose the thug life, the thug life chose me. -->
+  <h1>Today is: {{ date }}  and {{ len }} people are in %the Company%.</h1>
+
+  <div>
+      {%for i in range(0, len)%}
+        <a href="{{ url_for('main', _external=True) }}user/{{ users[i]['user']}}" target="_blank"><img src="{{ url_for('static', filename=users[i]['pic']) }}" alt="{{ users[i]['user'] }}" height="256" /></a>
+        {% if debug %}
+          Debug: {{ userHasPic }}
+        {% endif %}
+      {%endfor%}
+  </div>
+  <p>
+    <input type="button" value="Reload Table" onclick="window.location.reload();" />
+  </p>
+{% endblock %}

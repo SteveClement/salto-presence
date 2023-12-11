@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <style>
+      table
+      {
+        width: 600;
+        font: 19px Arial;
+      }
+      table, th, td
+      {
+        border: solid 2px #D1D3D5;
+        border-collapse: collapse;
+        padding: 3px 4px;
+        text-align: left;
+      }
+      img
+      {
+        width: 100%;
+      }
+    </style>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  </head>
+
+  <body>
+    <p>
+    <bold> Today is: {{ date }}  and {{ len }} people are in the house.</bold>
+    </p>
+    <div>
+      <table id=”tab”>
+        <tr>
+          <th> Colleague </th>
+          <th> Image </th>
+          <th> Potentially in score </th>
+          {% if debug %}
+          <th> Debug </th>
+          {% endif %}
+        </tr>
+
+        {%for i in range(0, len)%}
+        <tr>
+          <td> {{ users[i]['user'] }} </td>
+          <td><img src="{{ url_for('static', filename=users[i]['pic']) }}" alt="{{ users[i]['user'] }}" /></td>
+          <td> xy% </td>
+          {% if debug %}
+          <td> {{ userHasPic }} </td>
+          {% endif %}
+        </tr>
+        {%endfor%}
+
+      </table>
+    </div>
+    <p>
+      <input type="button" value="Reload Table" onclick="window.location.reload();" />
+    </p>
+  </body>
+
+</html>
