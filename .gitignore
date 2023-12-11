@@ -314,4 +314,6 @@ static/**/1D1A*.jpg
 static/**/*_ovr*.jpg
 static/**/*_web_debug*.jpg
 
+haarcascade_frontalface_default.xml
+
 tmp
