@@ -1,0 +1,125 @@
+{
+    "startingItem": null,
+    "maxCount": 201,
+    "filter": {
+      "$type": "Salto.Services.Web.Model.Dto.AuditTrail.FilterEngines.AuditTrailFilterEngineForAdvancedFilter",
+      "Who": {
+        "$type": "Salto.Services.Web.Model.Dto.AuditTrail.AdvancedFilter.AdvancedAuditTrailFilterWho",
+        "AccessLevels": [
+          {
+            "$type": "Salto.Services.Web.Model.Dto.Generic.IdAndName<System.Int32>",
+            "AdditionalData": 1,
+            "Id": -1,
+            "Name": "Any access level"
+          }
+        ],
+        "Users": [
+          {
+            "$type": "Salto.Services.Web.Model.Dto.Generic.IdAndName<System.Int32>",
+            "AdditionalData": 2,
+            "Id": -1,
+            "Name": "Any cardholder"
+          }
+        ],
+        "Operators": [
+          {
+            "$type": "Salto.Services.Web.Model.Dto.Generic.IdAndName<System.Int32>",
+            "AdditionalData": 1,
+            "Id": -1,
+            "Name": "Any operator"
+          }
+        ]
+      },
+      "Where": {
+        "$type": "Salto.Services.Web.Model.Dto.AuditTrail.AdvancedFilter.AdvancedAuditTrailFilterWhere",
+        "Zones": [
+          {
+            "$type": "Salto.Services.Web.Model.Dto.Generic.IdAndName",
+            "Id": -1,
+            "Name": "Any zone"
+          }
+        ],
+        "NodeDevices": [
+          {
+            "$type": "Salto.Services.Web.Model.Dto.Generic.IdAndName",
+            "Id": -1,
+            "Name": "Any nodes"
+          }
+        ],
+        "AlarmInputs": [
+          {
+            "$type": "Salto.Services.Web.Model.Dto.Generic.IdAndName",
+            "Id": -1,
+            "Name": "Any alarm inputs"
+          }
+        ],
+        "Relays": [
+          {
+            "$type": "Salto.Services.Web.Model.Dto.Generic.IdAndName",
+            "Id": -1,
+            "Name": "Any relays"
+          }
+        ],
+        "Doors": [
+          {
+            "$type": "Salto.Services.Web.Model.Dto.Generic.IdAndName<System.Int32>",
+            "AdditionalData": 1,
+            "Id": 97,
+            "Name": "Main Entrance"
+          }
+        ]
+      },
+      "What": {
+        "$type": "Salto.Services.Web.Model.Dto.AuditTrail.AdvancedFilter.AdvancedAuditTrailFilterWhat",
+        "NodeOperations": [
+          {
+            "$type": "Salto.Services.Web.Model.Dto.Generic.IdAndName",
+            "Id": -1,
+            "Name": "Any node operation"
+          }
+        ],
+        "AlarmInputOperations": [
+          {
+            "$type": "Salto.Services.Web.Model.Dto.Generic.IdAndName",
+            "Id": -1,
+            "Name": "Any alarm input operation"
+          }
+        ],
+        "RelayOperations": [
+          {
+            "$type": "Salto.Services.Web.Model.Dto.Generic.IdAndName",
+            "Id": -1,
+            "Name": "Any relay operation"
+          }
+        ],
+        "AccessPointOperations": [
+          {
+            "$type": "Salto.Services.Web.Model.Dto.Generic.IdAndName<System.Boolean>",
+            "AdditionalData": false,
+            "Id": 17,
+            "Name": "Door opened (key)"
+          }
+        ],
+        "OperationsGroups": []
+      },
+      "When": {
+        "$type": "Salto.Services.Web.Model.Dto.AuditTrail.AdvancedFilter.AdvancedAuditTrailFilterWhen",
+        "Periods": [
+          {
+            "$type": "Salto.Services.Web.Model.Dto.AuditTrail.AdvancedFilter.AdvancedAuditTrailFilterWhenPeriod",
+            "SpecifiedDatePeriodEnabled": false,
+            "StartDatePeriod": "2023-01-09T00:00:00.1",
+            "EndDatePeriod": "2023-01-10T00:00:00.1",
+            "DayOfWeek": 0,
+            "PeriodType": 0,
+            "Period": 1,
+            "StartTimeInterval": "0001-01-01T00:00:00.0",
+            "EndTimeInterval": "0001-01-01T23:59:59.0"
+          }
+        ]
+      },
+      "AnyPartition": true,
+      "Partitions": []
+    },
+    "isForward": true
+  }
