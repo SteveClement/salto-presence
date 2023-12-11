@@ -1,0 +1,3 @@
+# This file should only contain one line, this explains the various fields
+shortName,teamName,phoneExtenstion,eMailAddressUsedOnMattermost
+rBa,Team3,777,romboid.baratta@example.com
