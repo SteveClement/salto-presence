@@ -2,10 +2,14 @@
 
 This will show either a text based list or a web frontend to make a guesstimate who has badged into a Salto operated office.
 
-
 # Short-comings
 
 Currently only ONE reader is considered if a user is present. Ideally the one of the main entrance or the one with the most traffic.
+
+# Authentication against SALTO Space
+
+Ideally you create a new Monitor user under ':8100/index.html#!/operators' with the operator group 'Monitoring and Cardholders'
+Issue: If 2FA is enforced, the login will fail, you need to temporarily disable 2FA enforcement to get a bearer token and then you can re-enable 2FA.
 
 # Face detection
 
