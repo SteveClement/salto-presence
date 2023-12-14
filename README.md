@@ -2,6 +2,22 @@
 
 This will show either a text based list or a web frontend to make a guesstimate who has badged into a Salto operated office.
 
+# Quick-start
+
+```bash
+git clone git@github.com:SteveClement/salto-presence.git
+cd salto-presence
+cp .env.example .env
+vi .env
+./install_dependencies.sh
+python3 -m venv venv
+source ./venv/bin/activate
+pip install -r requirements.txt
+vi templates/bs.html # Change company name etc for web use
+# If you have a custom static/PhotosStaff directory, copy it now
+python main.py cli
+```
+
 # Short-comings
 
 Currently only ONE reader is considered if a user is present. Ideally the one of the main entrance or the one with the most traffic.
