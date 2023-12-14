@@ -1,17 +1,19 @@
 # A simple example to retrieve all users for a team while using a _token_
 # from the .netrc file instead of a password (as requests assumes by default)
 
+import json
 import logging
-import requests
 import netrc
 
+import requests
+from dotenv import dotenv_values
 from mattermostdriver import Driver
-
-import json
 
 logging.basicConfig(format="%(levelname)s - %(name)s - %(asctime)s - %(message)s")
 logger = logging.getLogger("MattermostManager")
 logger.setLevel(logging.INFO)
+
+config = dotenv_values()
 
 # requests overrides the simple authentication token header if it finds the entry in
 # the ~/.netrc file. Since we want to use ~/.netrc to retrieve the _token_, we need
@@ -22,7 +24,7 @@ class TokenAuth(requests.auth.AuthBase):
     def __call__(self, r):
         # TODO user config file
         # Implement my authentication
-        mmHost = "yourMattermostServer.fqdn"
+        mmHost = config["MM_HOST"]
         (login, account, password) = netrc.netrc().authenticators(mmHost)
         r.headers["Authorization"] = "Bearer %s" % password
         return r
