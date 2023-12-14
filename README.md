@@ -11,6 +11,13 @@ Currently only ONE reader is considered if a user is present. Ideally the one of
 Ideally you create a new Monitor user under ':8100/index.html#!/operators' with the operator group 'Monitoring and Cardholders'
 Issue: If 2FA is enforced, the login will fail, you need to temporarily disable 2FA enforcement to get a bearer token and then you can re-enable 2FA.
 
+# dot env
+
+```
+# Make sure to edit .env
+cp .env.example .env
+```
+
 # Face detection
 
 The face detection is curently used for an OG easter egg.

@@ -7,3 +7,4 @@ unidecode
 pillow
 opencv-python
 mattermostdriver
+python-dotenv
