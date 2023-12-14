@@ -37,8 +37,7 @@ class MattermostManager(object):
         # <mattermost.host.in.netrc> foo foo <long-string-of-token>
         # The "login" and "account" (both set to "foo" in the example are ignored)
 
-        # TODO user config file
-        mmHost = "yourMattermostServer.fqdn"
+        mmHost = config["MM_HOST"]
         try:
             (login, account, password) = netrc.netrc().authenticators(mmHost)
         except:
@@ -122,6 +121,6 @@ if __name__ == "__main__":
     print("Not a Module")
     mmM = MattermostManager()
     # mmM.getAllTeams()
-    teamMembers = mmM.getTeamMembers("yourTeamNeam")
+    teamMembers = mmM.getTeamMembers(config["MM_TEAM"])
     # userID = mmM.getUserID("some.user@example.com")
     # userStatus = mmM.getUserStatus(userID["id"])
