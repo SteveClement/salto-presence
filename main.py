@@ -24,7 +24,7 @@ from bcolors import bcolors
 
 app = Flask(__name__)
 Bootstrap(app)
-debug = False
+debug = config['DEBUG']
 
 config = dotenv_values()
 
