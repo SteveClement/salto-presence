@@ -24,9 +24,10 @@ from bcolors import bcolors
 
 app = Flask(__name__)
 Bootstrap(app)
-debug = config['DEBUG']
 
 config = dotenv_values()
+
+debug = config['DEBUG']
 
 if len(config) == 0:
     print("Please populate .env to reflect your setup")
